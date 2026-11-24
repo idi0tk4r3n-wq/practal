@@ -2,7 +2,7 @@
 <html lang="ko"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>가장 좋아하는 음악을 공유해보아요</title>
+    <title>👾 박상덕의 8-BIT WORLD ✨</title>
     <!-- 구글 픽셀 폰트 (Press Start 2P) & 가독성 높은 픽셀느낌 폰트 (DungGeunMo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -524,260 +524,644 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
 .st-editing .st-embed iframe{pointer-events:none}
 </style></head>
 <body>
-<div class="container">
-  <h1 class="title">가장 좋아하는 음악을 공유해보아요</h1>
-  <p>~서로 좋아하는 노래를 공유하자~</p>
-</div>
-<div class="st-dset" style="background-color: rgb(255, 240, 247); border-style: solid; border-width: 2px; border-color: rgb(233, 159, 195); max-width: 100%; width: 75%; text-align: center; position: relative; left: 12.6%; top: 12px; z-index: 5;">
-  <form class="st-sec st-dform" data-st="dform" data-tab="노래 장르별 인기도" data-api="https://script.google.com/macros/s/AKfycbzOw9abtmlE6_Zpe2diyM2rK1B2SdAVs25vi5XgmS1V2LiSeI1b1hpZFsTwuCoOeULM/exec">
-    <h2 class="st-h">당신이 가장 좋아하는 노래는?</h2>
-    <div class="st-fl" role="radiogroup" aria-label="분류" data-kind="chips">
-      <span>분류</span>
-      <div class="st-rg">
-        <label><input type="radio" name="분류" value="K-POP" required=""><span>K-POP</span></label>
-        <label><input type="radio" name="분류" value="발라드" required=""><span>발라드</span></label>
-        <label><input type="radio" name="분류" value="POP" required=""><span>POP</span></label>
-        <label><input type="radio" name="분류" value="락" required=""><span>락</span></label>
-        <label><input type="radio" name="분류" value="힙합/랩" required=""><span>힙합/랩</span></label>
-        <label><input type="radio" name="분류" value="클래식" required=""><span>클래식</span></label>
-        <label><input type="radio" name="분류" value="기타" required=""><span>기타</span></label>
-      </div>
-    </div>
-    <label class="st-fl"><span>노래 제목/가수(또는 작곡가)</span><input name="노래 제목/가수(또는 작곡가)" required="" type="text" maxlength="100"></label>
-    <label class="st-fl"><span>닉네임</span><input name="닉네임" type="text" maxlength="100"></label>
-    <button class="st-btn st-sub" type="submit">저장하기</button>
-    <p class="st-fmsg" aria-live="polite"></p>
-  </form>
-  
-  <section class="st-sec st-dstat" data-st="dstat" data-tab="노래 장르별 인기도" data-api="https://script.google.com/macros/s/AKfycbzOw9abtmlE6_Zpe2diyM2rK1B2SdAVs25vi5XgmS1V2LiSeI1b1hpZFsTwuCoOeULM/exec" data-calc="count" data-field="분류" data-unit="명" data-group="분류">
-    <h2 class="st-h">장르별 인기 순위</h2>
-    <div class="st-ds-out" aria-live="polite"></div>
-  </section>
-  <div class="st-dset">
-    
-    <section class="st-sec st-dlist" data-st="dlist" data-tab="노래 장르별 인기도" data-api="https://script.google.com/macros/s/AKfycbzOw9abtmlE6_Zpe2diyM2rK1B2SdAVs25vi5XgmS1V2LiSeI1b1hpZFsTwuCoOeULM/exec" data-show="분류,노래 제목/가수(또는 작곡가),닉네임,createdAt" data-view="bubble" data-sort="createdAt" data-desc="1" data-limit="50" data-search="">
-      <div class="st-dl-top">
-        <h2 class="st-h">추천곡 목록</h2>
-        <button class="st-dl-rf" type="button">↻ 새로고침</button>
-      </div>
-      <div class="st-dl-out" aria-live="polite"></div>
-    </section>
-    <section class="st-sec st-dstat" data-st="dstat" data-tab="노래 장르별 인기도" data-api="https://script.google.com/macros/s/AKfycbzOw9abtmlE6_Zpe2diyM2rK1B2SdAVs25vi5XgmS1V2LiSeI1b1hpZFsTwuCoOeULM/exec" data-calc="count" data-unit="곡">
-      <h2 class="st-h">지금까지 추천된 곡</h2>
-      <div class="st-ds-out" aria-live="polite"></div>
-    </section>
+<nav class="st-nav" data-studio="nav">
+  <div class="st-nav-in">
+    <a class="st-nav-a is-on" href="index.html">홈</a>
+    <a class="st-nav-a" href="about.html">박상덕을 알아보자!</a>
+    <a class="st-nav-a" href="data.html">가장 좋아하는 음악을 공유해보아요</a>
   </div>
-</div>
+</nav>
 
 
-<script data-studio="js">
+    <!-- 반짝이 애니메이션용 캔버스 -->
+    <canvas id="sparkleCanvas"></canvas>
+
+    <div class="container">
+        <!-- 헤더 -->
+        <header>
+            <h1 class="title">박상덕의 8-BIT WORLD</h1>
+            <div class="subtitle">✨ 빤짝빤짝 레트로 플레이어 ✨</div>
+        </header>
+
+        <!-- 섹션 1: 좋아하는 것 3가지 (카드 뒤집기) -->
+        <div class="section-title">상덕이가 좋아하는 3가지</div>
+        <div class="card-container">
+            <!-- 카드 1 -->
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">📚</div>
+                        <div class="card-title">책 읽기</div>
+                        <div class="click-hint">터치해서 뒤집어 봐!</div>
+                    </div>
+                    <div class="card-back">
+                        <p>📖 읽다 보면 내가 몰랐던 사실까지 전~부 다 알 수 있어!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 카드 2 -->
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">🎨</div>
+                        <div class="card-title">그림 그리기</div>
+                        <div class="click-hint">터치해서 뒤집어 봐!</div>
+                    </div>
+                    <div class="card-back">
+                        <p>🎨 심신 안정에도 도움이 되고, 무엇보다 재밌어!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 카드 3 -->
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="icon">🎧</div>
+                        <div class="card-title">노래 듣기</div>
+                        <div class="click-hint">터치해서 뒤집어 봐!</div>
+                    </div>
+                    <div class="card-back">
+                        <p>🎵 노래를 들으면서 얼마든지 상상의 나래로 빠져들 수 있어!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- 섹션 2: OX 퀴즈 -->
+        <div class="section-title">상덕's OX 퀴즈</div>
+        <div class="arcade-box">
+            <!-- 문제 1 -->
+            <div class="quiz-item">
+                <div class="quiz-question">
+                    ❓ Q1. "상덕이가 좋아하는 책 종류는 <b style="color: rgb(255, 0, 200);">이론 서적</b>이다!"
+                </div>
+                <div class="quiz-buttons">
+                    <button class="btn-ox btn-o" onclick="checkQuiz(1, true)">O</button>
+                    <button class="btn-ox btn-x" onclick="checkQuiz(1, false)">X</button>
+                </div>
+                <div class="quiz-result" id="quizResult1"></div>
+            </div>
+
+            <!-- 문제 2 -->
+            <div class="quiz-item">
+                <div class="quiz-question">
+                    ❓ Q2. "상덕이는 <b style="color: rgb(255, 0, 200);">지금 밥 먹고 있다</b>!"
+                </div>
+                <div class="quiz-buttons">
+                    <button class="btn-ox btn-o" onclick="checkQuiz(2, true)">O</button>
+                    <button class="btn-ox btn-x" onclick="checkQuiz(2, false)">X</button>
+                </div>
+                <div class="quiz-result" id="quizResult2"></div>
+            </div>
+
+            <!-- 문제 3 -->
+            <div class="quiz-item">
+                <div class="quiz-question">
+                    ❓ Q3. "상덕이는 <b style="color: rgb(255, 0, 200);">화학을 제일 좋아한다</b>!"
+                </div>
+                <div class="quiz-buttons">
+                    <button class="btn-ox btn-o" onclick="checkQuiz(3, true)">O</button>
+                    <button class="btn-ox btn-x" onclick="checkQuiz(3, false)">X</button>
+                </div>
+                <div class="quiz-result" id="quizResult3"></div>
+            </div>
+        </div>
+
+        <!-- 섹션 3: 오늘 점심 메뉴 추천 -->
+        <!-- ▼ 방명록·OX 투표 (4차시) ▼ --><sb-widget id="sb-web" style="display:block;width:100%;max-width:640px;margin:32px auto;flex:1 1 100%;grid-column:1/-1;align-self:stretch;box-sizing:border-box"></sb-widget><script>
 (function () {
-    function each(sel, fn) { Array.prototype.forEach.call(document.querySelectorAll(sel), fn); }
-    each('[data-st="tabs"]', function (t) {
-      var bs = t.querySelectorAll('.st-tab'), ps = t.querySelectorAll('.st-tab-panel');
-      function show(i) { bs.forEach(function (b, k) { b.classList.toggle('is-on', k === i); b.setAttribute('aria-selected', k === i); }); ps.forEach(function (p, k) { p.hidden = k !== i; }); }
-      bs.forEach(function (b, i) { b.addEventListener('click', function () { show(i); }); });
-      show(0);
-    });
-    each('[data-st-open]', function (b) { b.addEventListener('click', function () { var d = document.getElementById(b.getAttribute('data-st-open')); if (d && d.showModal) d.showModal(); }); });
-    each('dialog.st-modal', function (d) { d.addEventListener('click', function (e) { if (e.target === d || e.target.closest('[data-st-close]')) d.close(); }); });
-    each('[data-st="slider"]', function (s) {
-      var tr = s.querySelector('.st-slides'), dots = s.querySelector('.st-dots'), i = 0, n = tr.children.length;
-      function paint() { if (dots) Array.prototype.forEach.call(dots.children, function (d, k) { d.classList.toggle('is-on', k === i); }); }
-      function go(k) { i = (k + n) % n; tr.scrollTo({ left: tr.clientWidth * i, behavior: 'smooth' }); paint(); }
-      if (dots) { dots.innerHTML = ''; for (var k = 0; k < n; k++) (function (k) { var d = document.createElement('button'); d.type = 'button'; d.setAttribute('aria-label', (k + 1) + '번째 사진'); d.addEventListener('click', function () { go(k); }); dots.appendChild(d); })(k); }
-      var pv = s.querySelector('.st-prev'), nx = s.querySelector('.st-next');
-      if (pv) pv.addEventListener('click', function () { go(i - 1); });
-      if (nx) nx.addEventListener('click', function () { go(i + 1); });
-      tr.addEventListener('scroll', function () { var k = Math.round(tr.scrollLeft / (tr.clientWidth || 1)); if (k !== i) { i = k; paint(); } });
-      paint();
-    });
-    each('[data-st="quiz"]', function (q) {
-      var r = q.querySelector('.st-qr'), os = q.querySelectorAll('.st-opt');
-      os.forEach(function (o) { o.addEventListener('click', function () { var ok = o.hasAttribute('data-ok'); os.forEach(function (x) { x.classList.remove('is-ok', 'is-no'); }); o.classList.add(ok ? 'is-ok' : 'is-no'); if (r) r.textContent = ok ? (q.getAttribute('data-ok-msg') || '정답이에요!') : (q.getAttribute('data-no-msg') || '다시 생각해 봐요.'); }); });
-    });
-    each('[data-st="check"]', function (c, ci) {
-      var bs = c.querySelectorAll('input[type=checkbox]'), out = c.querySelector('.st-cnt'), bar = c.querySelector('.st-bar i'), key = 'st-check-' + location.pathname + '-' + ci, sv = {};
-      try { sv = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (e) {}
-      function up() { var d = 0; bs.forEach(function (b) { if (b.checked) d++; }); if (out) out.textContent = d + ' / ' + bs.length + ' 완료'; if (bar) bar.style.width = (bs.length ? d / bs.length * 100 : 0) + '%'; }
-      bs.forEach(function (b, i) { b.checked = !!sv[i]; b.addEventListener('change', function () { sv[i] = b.checked; try { localStorage.setItem(key, JSON.stringify(sv)); } catch (e) {} up(); }); });
-      up();
-    });
-    each('[data-st="dday"]', function (e) {
-      var o = e.querySelector('.st-dnum'), t = new Date(e.getAttribute('data-date') + 'T00:00:00'), now = new Date(); now.setHours(0, 0, 0, 0);
-      var d = Math.round((t - now) / 864e5); if (o) o.textContent = isNaN(d) ? '날짜를 정해요' : d > 0 ? 'D-' + d : d === 0 ? 'D-DAY' : 'D+' + (-d);
-    });
-    each('[data-st="timer"]', function (e) {
-      var m = +e.getAttribute('data-min') || 25, left = m * 60, id = 0, o = e.querySelector('.st-tnum'), go = e.querySelector('.st-tgo'), rs = e.querySelector('.st-trs');
-      function p() { o.textContent = String(Math.floor(left / 60)).padStart(2, '0') + ':' + String(left % 60).padStart(2, '0'); }
-      function stop() { clearInterval(id); id = 0; go.textContent = '시작'; }
-      go.addEventListener('click', function () { if (id) { stop(); return; } o.classList.remove('is-done'); id = setInterval(function () { if (left > 0) { left--; p(); } if (left <= 0) { stop(); o.classList.add('is-done'); } }, 1000); go.textContent = '잠시 멈춤'; });
-      rs.addEventListener('click', function () { stop(); left = m * 60; o.classList.remove('is-done'); p(); });
-      p();
-    });
-    each('[data-st="dark"]', function (b) {
-      try { if (localStorage.getItem('st-dark') === '1') document.documentElement.classList.add('st-dark'); } catch (e) {}
-      b.addEventListener('click', function () { var on = document.documentElement.classList.toggle('st-dark'); try { localStorage.setItem('st-dark', on ? '1' : '0'); } catch (e) {} });
-    });
+  var C = {"id":"sb-web","url":"https://script.google.com/macros/s/AKfycbzje1g5jzwCpVcM3I0HLbIzmjJkZFs-G1NlUNT3PvRsu0iKpQxeyi2fP6NbS8z02GOH5Q/exec","q":"탕수육은 찍먹이다","title":"일일 방명록!","sel":"","pos":"before"};
+  var host = document.getElementById(C.id);
+  if (!host || host.sbReady) return;
+  host.sbReady = true;
+  var PREVIEW = !!window.__SB_PREVIEW;
 
-    // ---- 데이터 블록: 입력 폼 · 목록 · 통계 (백엔드 주소와 탭 이름으로 연결) ----
-    var EDIT = document.documentElement.classList.contains('st-editing');
-    function stQs(o) { return Object.keys(o).filter(function (k) { return o[k] !== '' && o[k] != null; }).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(o[k]); }).join('&'); }
-    function stGet(base, o) { return fetch(base + (base.indexOf('?') < 0 ? '?' : '&') + stQs(o)).then(function (r) { return r.json(); }).then(function (j) { if (!j.ok) throw new Error(j.error || '실패'); return j; }); }
-    function stPost(base, o) { return fetch(base, { method: 'POST', body: JSON.stringify(o) }).then(function (r) { return r.json(); }).then(function (j) { if (!j.ok) throw new Error(j.error || '실패'); return j; }); }
-    function mk(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
-    function today() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
-    function errText(e) { return /Failed to fetch|NetworkError|Load failed/i.test(String(e && e.message)) ? '서버에 연결하지 못했어요. 백엔드 주소와 배포 설정(액세스: 모든 사용자)을 확인해요.' : String(e && e.message || e); }
-    function pubOnly(c) { return c.charAt(0) !== '_'; }
-    function lab(c) { return c === 'createdAt' ? '작성 시간' : c; }
-    function starStr(v) { var n = Math.max(0, Math.min(5, Math.round(+v))); return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); }
-    function fire() { document.dispatchEvent(new Event('st-data')); }
-    each('[data-st="dform"]', function (f) {
-      var base = f.getAttribute('data-api'), tab = f.getAttribute('data-tab') || 'data', msg = f.querySelector('.st-fmsg'), sb = f.querySelector('.st-sub');
-      function rv(x) { var o = x.parentNode.querySelector('.st-rv'); if (o) o.textContent = x.value; }
-      function fresh() {
-        Array.prototype.forEach.call(f.querySelectorAll('input[data-today]'), function (i) { if (!i.value) i.value = today(); });
-        Array.prototype.forEach.call(f.querySelectorAll('input[type=range]'), rv);
+  function place() {
+    if (!C.sel) return;
+    var t = null;
+    try { t = document.querySelector(C.sel); } catch (e) {}
+    if (!t || t === host || t.contains(host) || !t.parentNode) return;
+    if (C.pos === 'before') { if (t.previousElementSibling !== host) t.parentNode.insertBefore(host, t); }
+    else if (t.nextElementSibling !== host) t.parentNode.insertBefore(host, t.nextSibling);
+  }
+
+  function rgb(s) { var m = (s || '').match(/[\d.]+/g); return m ? m.map(Number) : null; }
+  function lum(c) { return (0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]) / 255; }
+  function pageBg() {
+    var el = host.parentElement;
+    while (el) { var c = rgb(getComputedStyle(el).backgroundColor); if (c && (c.length < 4 || c[3] > 0.5)) return c; el = el.parentElement; }
+    return [255, 255, 255];
+  }
+  function accent() {
+    var els = document.querySelectorAll('button, .btn, a, h1, h2');
+    for (var i = 0; i < els.length && i < 60; i++) {
+      if (host.contains(els[i])) continue;
+      var cs = getComputedStyle(els[i]);
+      var list = [cs.backgroundColor, cs.color];
+      for (var j = 0; j < 2; j++) {
+        var c = rgb(list[j]);
+        if (!c || (c.length > 3 && c[3] < 0.5)) continue;
+        var mx = Math.max(c[0], c[1], c[2]), mn = Math.min(c[0], c[1], c[2]);
+        if (mx - mn > 60 && lum(c) > 0.2 && lum(c) < 0.8) return 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')';
       }
-      Array.prototype.forEach.call(f.querySelectorAll('input[type=range]'), function (x) { x.addEventListener('input', function () { rv(x); }); });
-      fresh();
-      f.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (EDIT) return;
-        if (!base) { msg.textContent = '백엔드 주소가 아직 없어요. 웹 스튜디오 왼쪽 "데이터 연결"에 넣어요.'; return; }
-        var data = {};
-        Array.prototype.forEach.call(f.elements, function (x) {
-          if (!x.name || (x.type === 'radio' && !x.checked)) return;
-          data[x.name] = (x.type === 'number' || x.type === 'range') && x.value !== '' ? Number(x.value) : x.value;
-        });
-        sb.disabled = true; msg.textContent = '저장하는 중…';
-        stPost(base, { action: 'add', tab: tab, data: data }).then(function (j) {
-          try { localStorage.setItem('st-tok-' + tab + '-' + j.id, j.token); } catch (x) {}
-          msg.textContent = f.getAttribute('data-ok') || '저장됐어요 ✓'; f.reset(); fresh();
-          fire();
-        }).catch(function (err) { msg.textContent = '저장하지 못했어요. ' + errText(err); }).then(function () { sb.disabled = false; });
-      });
-    });
-    each('[data-st="dlist"]', function (L) {
-      var base = L.getAttribute('data-api'), tab = L.getAttribute('data-tab') || 'data', out = L.querySelector('.st-dl-out');
-      if (!out) return;
-      var cols = (L.getAttribute('data-show') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
-      var stars = (L.getAttribute('data-stars') || '').split(',');
-      var view = L.getAttribute('data-view') || 'card';
-      var fcol = L.getAttribute('data-filter') || '', wantQ = L.hasAttribute('data-search'), mine = L.hasAttribute('data-mine'), lim = +L.getAttribute('data-limit') || 20;
-      var q = '', fv = '', rows0 = [], fbox = null;
-      var note = mk('p', 'st-dmsg'); L.appendChild(note);
-      if (wantQ || fcol) {
-        var ctl = mk('div', 'st-dl-ctl'); L.insertBefore(ctl, out);
-        if (wantQ) { var sbx = mk('input', 'st-dl-q'); sbx.type = 'search'; sbx.placeholder = '검색'; sbx.setAttribute('aria-label', '목록 검색'); sbx.addEventListener('input', function () { q = sbx.value.trim().toLowerCase(); show(); }); ctl.appendChild(sbx); }
-        if (fcol) { fbox = mk('div', 'st-dl-f'); ctl.appendChild(fbox); }
-      }
-      var rf = L.querySelector('.st-dl-rf'); if (rf) rf.addEventListener('click', function () { load(); });
-      function val(r, c) { var v = r[c]; if (v == null || v === '') return ''; return stars.indexOf(c) >= 0 && !isNaN(+v) ? starStr(v) : String(v); }
-      function tokOf(r) { var tk = ''; try { tk = localStorage.getItem('st-tok-' + tab + '-' + r.id) || ''; } catch (x) {} return base && !EDIT ? tk : ''; }
-      function delBtn(r, tk) {
-        var d = mk('button', 'st-del', '삭제'); d.type = 'button'; var armed = false;
-        d.addEventListener('click', function () {
-          if (!armed) { armed = true; d.textContent = '한 번 더 누르면 삭제돼요'; setTimeout(function () { armed = false; d.textContent = '삭제'; }, 3000); return; }
-          stPost(base, { action: 'delete', tab: tab, id: r.id, token: tk }).then(function () { fire(); }).catch(function (err) { note.textContent = errText(err); });
-        });
-        return d;
-      }
-      function draw(rows) {
-        out.innerHTML = ''; out.className = 'st-dl-out' + (view === 'bubble' ? ' st-dl-b' : '');
-        if (!rows.length) { out.appendChild(mk('p', 'st-dmsg', mine && !EDIT ? '이 기기에서 쓴 글이 아직 없어요.' : '보여 줄 글이 없어요. 첫 번째로 남겨 보세요!')); return; }
-        var cs = cols.length ? cols : Object.keys(rows[0]).filter(function (k) { return k !== 'id' && k !== 'createdAt'; });
-        if (view === 'table') {
-          var w = mk('div', 'st-dl-tw'), t = mk('table', 'st-dl-t'), hr = mk('tr');
-          var anyDel = rows.some(function (r) { return !!tokOf(r); });
-          cs.forEach(function (c) { hr.appendChild(mk('th', '', lab(c))); }); if (anyDel) hr.appendChild(mk('th')); t.appendChild(hr);
-          rows.forEach(function (r) { var tr = mk('tr'); cs.forEach(function (c) { tr.appendChild(mk('td', '', val(r, c))); }); if (anyDel) { var td = mk('td'), tk = tokOf(r); if (tk) td.appendChild(delBtn(r, tk)); tr.appendChild(td); } t.appendChild(tr); });
-          w.appendChild(t); out.appendChild(w); return;
-        }
-        rows.forEach(function (r) {
-          var it = mk('div', 'st-dl-i');
-          cs.forEach(function (c, i) {
-            var v = val(r, c); if (v === '') return;
-            if (c === 'createdAt') { it.appendChild(mk('p', 'st-sm', v)); return; }
-            var p = mk('p', i === 0 ? 'st-t' : '');
-            if (i > 0 && view === 'card') p.appendChild(mk('span', 'st-k', lab(c)));
-            p.appendChild(document.createTextNode(v)); it.appendChild(p);
-          });
-          var tk = tokOf(r); if (tk) it.appendChild(delBtn(r, tk));
-          out.appendChild(it);
-        });
-      }
-      function drawF() {
-        if (!fbox) return; fbox.innerHTML = '';
-        var vs = []; rows0.forEach(function (r) { var v = r[fcol]; if (v !== undefined && v !== '' && vs.indexOf(String(v)) < 0) vs.push(String(v)); });
-        [''].concat(vs).forEach(function (v) {
-          var b = mk('button', 'st-dl-fb' + (v === fv ? ' is-on' : ''), v === '' ? '전체' : (stars.indexOf(fcol) >= 0 ? starStr(v) : v)); b.type = 'button';
-          b.addEventListener('click', function () { fv = v; drawF(); show(); }); fbox.appendChild(b);
-        });
-      }
-      function show() {
-        var rs = rows0.filter(function (r) {
-          if (mine && !EDIT && base && !tokOf(r)) return false;
-          if (fcol && fv !== '' && String(r[fcol]) !== fv) return false;
-          if (q) { var hit = false; Object.keys(r).forEach(function (k) { if (k !== 'id' && pubOnly(k) && String(r[k]).toLowerCase().indexOf(q) >= 0) hit = true; }); if (!hit) return false; }
-          return true;
-        });
-        draw(rs.slice(0, lim));
-      }
-      function demo() {
-        var cs = cols.length ? cols : ['항목'];
-        return [1, 2, 3].map(function (n) { var r = { id: 'x' + n }; cs.forEach(function (c) { r[c] = c === 'createdAt' ? '2026-12-0' + n + ' 09:00' : stars.indexOf(c) >= 0 ? 5 - n : (c === fcol ? '예시 ' + (n % 2 + 1) : '예시 ' + n); }); return r; });
-      }
-      function load() {
-        if (EDIT || !base) { rows0 = demo(); drawF(); show(); if (!EDIT) note.textContent = '※ 예시 모습이에요. 백엔드 주소를 연결하면 진짜 데이터가 나와요.'; return; }
-        note.textContent = '불러오는 중…';
-        stGet(base, { action: 'list', tab: tab, sort: L.getAttribute('data-sort') || 'createdAt', desc: L.getAttribute('data-desc') ? 'true' : '', limit: (fcol || wantQ || mine) ? 300 : lim })
-          .then(function (j) { note.textContent = mine ? '이 기기에서 쓴 글만 보여요.' : ''; rows0 = j.rows; drawF(); show(); }).catch(function (err) { note.textContent = '불러오지 못했어요. ' + errText(err); });
-      }
-      load();
-      document.addEventListener('st-data', function () { if (!EDIT && base) load(); });
-    });
-    each('[data-st="dstat"]', function (B) {
-      var base = B.getAttribute('data-api'), tab = B.getAttribute('data-tab') || 'data', out = B.querySelector('.st-ds-out');
-      if (!out) return;
-      var calc = B.getAttribute('data-calc') || 'count', field = B.getAttribute('data-field') || '', group = B.getAttribute('data-group') || '', unit = B.getAttribute('data-unit') || '';
-      var note = mk('p', 'st-dmsg'); B.appendChild(note);
-      function pick(o) { var v = calc === 'count' ? o.count : o[calc]; return v === undefined ? null : v; }
-      function fmt(v) { return v === null ? '-' : Number(v).toLocaleString('ko-KR') + unit; }
-      function bars(map) {
-        var ks = Object.keys(map).sort(function (a, b) { return B.getAttribute('data-order') === 'key' ? (a < b ? -1 : a > b ? 1 : 0) : map[b] - map[a]; }), mx = Math.max.apply(null, ks.map(function (k) { return map[k]; }).concat(1));
-        var box = mk('div', 'st-ds-bars');
-        ks.forEach(function (k) { var r = mk('div', 'st-ds-row'), b = mk('span', 'st-ds-bar'), i = mk('i'); i.style.width = Math.round(map[k] / mx * 100) + '%'; b.appendChild(i); r.appendChild(mk('span', '', k)); r.appendChild(b); r.appendChild(mk('span', '', fmt(map[k]))); box.appendChild(r); });
-        return box;
-      }
-      function draw(j) {
-        out.innerHTML = '';
-        var v = pick(j.all);
-        out.appendChild(mk('p', 'st-ds-num', fmt(v)));
-        if (v === null && field) { note.textContent = '"' + field + '" 열에는 계산할 숫자가 없어요.'; return; }
-        var m = {};
-        if (group && j.groups) { Object.keys(j.groups).forEach(function (g) { var x = pick(j.groups[g]); m[g] = x === null ? 0 : x; }); }
-        else if (!group && field && calc === 'count' && j.all.values) { m = j.all.values; }
-        if (Object.keys(m).length) out.appendChild(bars(m));
-      }
-      function demo() {
-        var g = { '예시 A': { count: 6, sum: 30000, avg: 5000 }, '예시 B': { count: 4, sum: 12000, avg: 3000 }, '예시 C': { count: 2, sum: 6000, avg: 3000 } };
-        return { all: { count: 12, sum: 48000, avg: 4000, min: 500, max: 15000, values: { '예시 A': 6, '예시 B': 4, '예시 C': 2 } }, groups: g };
-      }
-      function load() {
-        if (EDIT || !base) { draw(demo()); if (!EDIT) note.textContent = '※ 예시 모습이에요. 백엔드 주소를 연결하면 진짜 데이터가 나와요.'; return; }
-        stGet(base, { action: 'stats', tab: tab, field: field, groupBy: group }).then(function (j) { note.textContent = ''; draw(j); }).catch(function (err) { note.textContent = '불러오지 못했어요. ' + errText(err); });
-      }
-      load();
-      document.addEventListener('st-data', function () { if (!EDIT && base) load(); });
-    });
-    // 스크롤 등장 효과: 화면에 들어오면 나타남 (지원하지 않는 브라우저·움직임 줄이기 설정에서는 그냥 보임)
-    var ins = document.querySelectorAll('[data-st-in]');
-    if (ins.length && 'IntersectionObserver' in window && !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
-      document.documentElement.classList.add('st-js');
-      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }); }, { threshold: 0.08 });
-      Array.prototype.forEach.call(ins, function (e) { io.observe(e); });
     }
-  })();
-</script>
+    return '#E5486F';
+  }
+
+  var root = host.attachShadow ? host.attachShadow({ mode: 'open' }) : host;
+  root.innerHTML = '<' + 'style>' +
+    '.wrap{display:flex;flex-direction:column;gap:16px}' +
+    '.card{box-sizing:border-box;font-family:inherit;font-size:16px;line-height:1.6;text-align:left;border-radius:16px;padding:20px;background:rgba(255,255,255,.94);color:#222;border:1px solid rgba(0,0,0,.1);box-shadow:0 4px 18px rgba(0,0,0,.08)}' +
+    '.dark .card{background:rgba(20,20,28,.9);color:#f3f3f6;border-color:rgba(255,255,255,.18)}' +
+    '.card *{box-sizing:border-box;font-family:inherit}' +
+    'h3{margin:0 0 12px;font-size:20px;line-height:1.35;color:inherit}' +
+    '.row{display:flex;gap:8px;flex-wrap:wrap}' +
+    'input,textarea{flex:1 1 140px;min-width:0;font-size:16px;padding:10px 12px;border-radius:10px;border:1px solid #ccc;background:#fff;color:inherit}' +
+    '.dark input,.dark textarea{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08)}' +
+    'textarea{flex-basis:100%;resize:vertical;min-height:70px}' +
+    'button{font-size:16px;font-weight:700;border:0;border-radius:10px;padding:10px 18px;cursor:pointer;background:var(--a,#E5486F);color:#fff}' +
+    'button:disabled{opacity:.45;cursor:default}' +
+    '.msg{margin:8px 0 0;font-size:14px;min-height:1em;opacity:.85}' +
+    '.list{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;max-height:340px;overflow:auto}' +
+    '.list li{padding:10px 12px;border-radius:10px;background:rgba(0,0,0,.04);word-break:break-all}.dark .list li{background:rgba(255,255,255,.07)}' +
+    '.list b{margin-right:6px}.list small{opacity:.6;font-size:12px}.list p{margin:2px 0 0;white-space:pre-wrap}' +
+    '.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px;font-size:14px;opacity:.85}' +
+    '.top .re{background:transparent;color:inherit;border:1px solid currentColor;padding:4px 10px;font-size:13px;font-weight:400;opacity:.8}' +
+    '.live{display:inline-flex;align-items:center;gap:6px}.live:before{content:"";width:8px;height:8px;border-radius:50%;background:#1BA672;box-shadow:0 0 0 0 rgba(27,166,114,.6);animation:pulse 1.6s infinite}' +
+    '@keyframes pulse{70%{box-shadow:0 0 0 7px rgba(27,166,114,0)}100%{box-shadow:0 0 0 0 rgba(27,166,114,0)}}' +
+    '.ox{display:flex;gap:10px}.ox button{flex:1;font-size:28px;padding:10px 0;box-shadow:inset 0 -4px 0 rgba(0,0,0,.18)}' +
+    '.ox .o{background:linear-gradient(#ff7fa3,#e5486f)}.ox .x{background:linear-gradient(#7d9bff,#4a6cf7)}' +
+    '.mine{outline:3px solid #222;outline-offset:2px}.dark .mine{outline-color:#fff}' +
+    '.legend{display:flex;justify-content:space-between;font-size:15px;font-weight:700;margin-top:14px}' +
+    '.legend .lo{color:#e5486f}.legend .lx{color:#4a6cf7}' +
+    '.tube{position:relative;margin-top:6px;height:64px}' +
+    '.tube canvas{display:block;width:100%;height:64px}' +
+    '.tilt{margin:8px 0 0;font-weight:700;text-align:center;min-height:1.6em}' +
+    '</' + 'style><div class="wrap"><div class="card oxc"></div><div class="card gbc"></div></div>';
+  var wrap = root.querySelector('.wrap');
+  function theme() {
+    try { wrap.classList.toggle('dark', lum(pageBg()) < 0.4); wrap.style.setProperty('--a', accent()); } catch (e) {}
+  }
+
+  function flagKey(k) { return 'sb-done:' + k + ':' + C.url; }
+  var mem = {};
+  function getFlag(k) { if (PREVIEW) return mem[k]; try { return localStorage.getItem(flagKey(k)); } catch (e) { return mem[k]; } }
+  function setFlag(k, v) { mem[k] = v; if (PREVIEW) return; try { localStorage.setItem(flagKey(k), v); } catch (e) {} }
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function time(v) {
+    var d = new Date(v); if (isNaN(d)) return '';
+    function p(n) { return (n < 10 ? '0' : '') + n; }
+    return (d.getMonth() + 1) + '월 ' + d.getDate() + '일 ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+  function norm(list) {
+    if (!Array.isArray(list)) throw new Error('bad');
+    return list.map(function (r) { var o = {}; for (var k in r) o[String(k).trim()] = r[k]; return o; });
+  }
+  var demo = { O: 6, X: 3, '방명록': [{ '시간': new Date().toISOString(), '닉네임': '예시 방문자', '내용': '미리보기용 예시 글이에요. 실제 페이지에서는 방문자가 남긴 글이 보여요.' }] };
+  function api(q) { return C.url + (C.url.indexOf('?') < 0 ? '?' : '&') + q; }
+  function load(sheet) {
+    if (PREVIEW) return Promise.resolve(demo[sheet].slice());
+    return fetch(api('sheet=' + encodeURIComponent(sheet))).then(function (r) { return r.json(); }).then(norm);
+  }
+  function loadCount() {
+    if (PREVIEW) return Promise.resolve({ O: demo.O, X: demo.X });
+    return fetch(api('count=OX')).then(function (r) { return r.json(); }).then(function (c) {
+      if (!c || typeof c.O !== 'number') throw new Error('bad'); return c;
+    });
+  }
+  // 저장 요청: 서버가 바쁘면 잠시 기다렸다가 최대 3번까지 다시 보내기
+  function send(data, tries) {
+    if (PREVIEW) return Promise.reject(new Error('preview'));
+    tries = tries || 0;
+    return fetch(C.url, { method: 'POST', body: JSON.stringify(data) }).then(function (r) { return r.text(); }).then(function (t) {
+      if (t.indexOf('"ok"') < 0) throw new Error('busy'); return t;
+    }).catch(function (e) {
+      if (tries >= 3) throw e;
+      return new Promise(function (ok) { setTimeout(ok, 1500 * (tries + 1) + Math.random() * 1500); }).then(function () { return send(data, tries + 1); });
+    });
+  }
+  // 주기적으로 다시 불러오기: 실패하면 간격을 늘리고, 탭이 안 보이면 쉬기
+  function poll(fn, base) {
+    var fails = 0;
+    function next() { setTimeout(tick, base * Math.min(5, 1 + fails) + Math.random() * 2000); }
+    function tick() {
+      if (document.hidden) { next(); return; }
+      Promise.resolve(fn()).then(function (ok) { fails = ok === false ? fails + 1 : 0; next(); }, function () { fails++; next(); });
+    }
+    next();
+  }
+  function slow(m) { setTimeout(function () { if (m.textContent === '저장 중…') m.textContent = '저장 중… 지금 참여하는 사람이 많아서 조금 걸려요. 창을 닫지 말고 기다려 주세요.'; }, 4000); }
+  function failText(e) {
+    return e && e.message === 'preview' ? '미리보기에서는 저장되지 않아요. GitHub에 올린 뒤 시험해요.' : '서버와 연결하지 못했어요. 잠시 뒤 다시 눌러 보세요.';
+  }
+
+  function placeAndTheme() { place(); theme(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', placeAndTheme); else placeAndTheme();
+  window.addEventListener('load', function () { placeAndTheme(); setTimeout(placeAndTheme, 500); });
+
+  buildOX(root.querySelector('.oxc'));
+  buildGB(root.querySelector('.gbc'));
+
+  // ---------- OX 투표: 액체 게이지 ----------
+  function buildOX(card) {
+    card.appendChild(el('h3', '', 'Q. ' + (C.q || '')));
+    var box = el('div', 'ox'); var bo = el('button', 'o', 'O'); var bx = el('button', 'x', 'X');
+    box.appendChild(bo); box.appendChild(bx);
+    var msg = el('p', 'msg');
+    var lg = el('div', 'legend'); var lo = el('span', 'lo', 'O 0명'); var lx = el('span', 'lx', 'X 0명'); lg.appendChild(lo); lg.appendChild(lx);
+    var tube = el('div', 'tube'); var cv = el('canvas'); tube.appendChild(cv);
+    var tilt = el('p', 'tilt');
+    var top = el('div', 'top'); var count = el('span', 'live', '불러오는 중…'); var re = el('button', 're', '↻ 새로고침');
+    top.appendChild(count); top.appendChild(re);
+    [box, msg, lg, tube, tilt, top].forEach(function (x) { card.appendChild(x); });
+
+    var o = 0, x = 0, target = 0.5, pos = 0.5, vel = 0, t0 = 0, running = false, seen = true;
+    var bubbles = [];
+    for (var i = 0; i < 14; i++) bubbles.push({ s: i % 2, x: Math.random(), y: Math.random(), r: 1 + Math.random() * 2.2, v: 0.15 + Math.random() * 0.35 });
+    var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function mark() {
+      var f = getFlag('OX'); if (!f) return;
+      bo.disabled = bx.disabled = true;
+      (f === 'O' ? bo : bx).classList.add('mine');
+      msg.textContent = '내 선택: ' + f + ' · 참여해 줘서 고마워요!';
+    }
+    mark();
+    function setCounts(no, nx) {
+      o = no; x = nx;
+      var n = o + x;
+      target = n ? o / n : 0.5;
+      lo.textContent = 'O ' + o + '명'; lx.textContent = 'X ' + x + '명';
+      count.textContent = n ? '실시간 · 총 ' + n + '명 참여' : '실시간 · 아직 아무도 투표하지 않았어요';
+      tilt.textContent = !n ? '첫 번째로 눌러 보세요!' : o > x ? 'O 쪽으로 기울었어요' : o < x ? 'X 쪽으로 기울었어요' : '팽팽해요!';
+      kick();
+    }
+    function show(c) {
+      if (c.O !== o || c.X !== x || count.textContent.indexOf('불러오는') === 0) setCounts(c.O, c.X);
+    }
+    var busy = false;
+    function refresh() {
+      if (busy) return true; busy = true;
+      return loadCount().then(function (c) { busy = false; show(c); return true; }, function () { busy = false; if (!(o + x)) count.textContent = '결과를 불러오지 못했어요. 잠시 뒤 다시 시도해요.'; return false; });
+    }
+    re.addEventListener('click', refresh);
+    function vote(v) {
+      if (getFlag('OX')) return;
+      bo.disabled = bx.disabled = true; msg.textContent = '저장 중…'; slow(msg);
+      if (PREVIEW) { msg.textContent = failText(new Error('preview')); bo.disabled = bx.disabled = false; return; }
+      send({ sheet: 'OX', '답': v }).then(function () { setFlag('OX', v); mark(); setCounts(o + (v === 'O' ? 1 : 0), x + (v === 'X' ? 1 : 0)); setTimeout(refresh, 1500); },
+        function (e) { msg.textContent = failText(e); bo.disabled = bx.disabled = false; });
+    }
+    bo.addEventListener('click', function () { vote('O'); });
+    bx.addEventListener('click', function () { vote('X'); });
+
+    // 그리기
+    var ctx = cv.getContext && cv.getContext('2d');
+    function size() {
+      var w = cv.clientWidth || 300, h = 64, d = window.devicePixelRatio || 1;
+      if (cv.width !== Math.round(w * d)) { cv.width = Math.round(w * d); cv.height = Math.round(h * d); }
+      return { w: w, h: h, d: d };
+    }
+    function capsule(c, x0, y0, w, h) {
+      var r = h / 2;
+      c.beginPath(); c.moveTo(x0 + r, y0); c.lineTo(x0 + w - r, y0); c.arc(x0 + w - r, y0 + r, r, -Math.PI / 2, Math.PI / 2);
+      c.lineTo(x0 + r, y0 + h); c.arc(x0 + r, y0 + r, r, Math.PI / 2, Math.PI * 1.5); c.closePath();
+    }
+    function liquid(c, x0, y0, w, h, edge, left, cols) {
+      var g = c.createLinearGradient(0, y0, 0, y0 + h);
+      g.addColorStop(0, cols[0]); g.addColorStop(0.45, cols[1]); g.addColorStop(1, cols[2]);
+      c.beginPath();
+      var steps = 24, k;
+      if (left) { c.moveTo(x0 - 2, y0 - 2); for (k = 0; k <= steps; k++) c.lineTo(edge(y0 + h * k / steps), y0 + h * k / steps); c.lineTo(x0 - 2, y0 + h + 2); }
+      else { c.moveTo(x0 + w + 2, y0 - 2); for (k = 0; k <= steps; k++) c.lineTo(edge(y0 + h * k / steps), y0 + h * k / steps); c.lineTo(x0 + w + 2, y0 + h + 2); }
+      c.closePath(); c.fillStyle = g; c.fill();
+    }
+    function frame(ts) {
+      if (!ctx) return;
+      if (!t0) t0 = ts;
+      var t = (ts - t0) / 1000;
+      vel += (target - pos) * 0.018; vel *= 0.9; pos += vel;
+      var S = size(), w = S.w, h = S.h, c = ctx;
+      c.setTransform(S.d, 0, 0, S.d, 0, 0); c.clearRect(0, 0, w, h);
+      var pad = 3, X0 = pad, Y0 = pad, W = w - pad * 2, H = h - pad * 2;
+      // 유리관 그림자
+      c.save(); capsule(c, X0, Y0 + 2, W, H); c.fillStyle = 'rgba(0,0,0,.10)'; c.fill(); c.restore();
+      c.save(); capsule(c, X0, Y0, W, H); c.clip();
+      c.fillStyle = '#e9e9f1'; c.fillRect(X0, Y0, W, H);
+      var amp = calm ? 1 : 4.5 + Math.min(12, Math.abs(vel) * 1000);
+      var lean = Math.max(-18, Math.min(18, vel * 2600));
+      var bx0 = X0 + W * pos;
+      function edge(y) {
+        var u = (y - Y0) / H;
+        return bx0 + Math.sin(u * 6.2 + t * 3.1) * amp * 0.6 + Math.sin(u * 11 - t * 4.7) * amp * 0.4 + (u - 0.5) * lean;
+      }
+      liquid(c, X0, Y0, W, H, edge, true, ['#ff9dbb', '#e5486f', '#a3224a']);
+      liquid(c, X0, Y0, W, H, edge, false, ['#9fb5ff', '#4a6cf7', '#2a3fb0']);
+      // 앞쪽 물결(반투명): 겹쳐 흐르는 입체감
+      function edge2(y) { var u = (y - Y0) / H; return edge(y) + Math.sin(u * 4 - t * 2.3) * (calm ? 1 : 7); }
+      c.globalAlpha = 0.35;
+      liquid(c, X0, Y0, W, H, edge2, true, ['#ffc2d4', '#f06b90', '#c23a62']);
+      liquid(c, X0, Y0, W, H, edge2, false, ['#c6d3ff', '#6f8bff', '#3b52c9']);
+      c.globalAlpha = 1;
+      // 경계 거품
+      c.beginPath(); for (var k = 0; k <= 24; k++) { var yy = Y0 + H * k / 24; if (k) c.lineTo(edge(yy), yy); else c.moveTo(edge(yy), yy); }
+      c.strokeStyle = 'rgba(255,255,255,.75)'; c.lineWidth = 2.5; c.stroke();
+      // 거품 방울
+      bubbles.forEach(function (b) {
+        if (!calm) { b.y -= b.v * 0.012; if (b.y < -0.1) { b.y = 1.1; b.x = Math.random(); } }
+        var bx = b.s ? X0 + W * pos + (W * (1 - pos)) * b.x : X0 + W * pos * b.x;
+        var by = Y0 + H * b.y + Math.sin(t * 2 + b.x * 9) * 1.5;
+        if (Math.abs(bx - edge(by)) < 6) return;
+        c.beginPath(); c.arc(bx, by, b.r, 0, Math.PI * 2); c.fillStyle = 'rgba(255,255,255,.45)'; c.fill();
+      });
+      // 유리 입체감: 위쪽 반사광, 아래쪽 그림자
+      var gl = c.createLinearGradient(0, Y0, 0, Y0 + H);
+      gl.addColorStop(0, 'rgba(255,255,255,.55)'); gl.addColorStop(0.28, 'rgba(255,255,255,.08)'); gl.addColorStop(0.62, 'rgba(255,255,255,0)'); gl.addColorStop(1, 'rgba(0,0,0,.22)');
+      c.fillStyle = gl; c.fillRect(X0, Y0, W, H);
+      c.beginPath(); c.moveTo(X0 + H * 0.5, Y0 + H * 0.2); c.lineTo(X0 + W - H * 0.5, Y0 + H * 0.2);
+      c.strokeStyle = 'rgba(255,255,255,.55)'; c.lineWidth = 3; c.lineCap = 'round'; c.stroke();
+      // 가운데 기준선
+      c.beginPath(); c.setLineDash([3, 4]); c.moveTo(X0 + W / 2, Y0 + 4); c.lineTo(X0 + W / 2, Y0 + H - 4);
+      c.strokeStyle = 'rgba(255,255,255,.7)'; c.lineWidth = 1.5; c.stroke(); c.setLineDash([]);
+      // 글자
+      var n = o + x, po = n ? Math.round(o / n * 100) : 50;
+      c.font = '700 16px system-ui, sans-serif'; c.textBaseline = 'middle'; c.fillStyle = '#fff';
+      c.shadowColor = 'rgba(0,0,0,.35)'; c.shadowBlur = 3;
+      if (W * pos > 70) { c.textAlign = 'left'; c.fillText('O ' + (n ? po + '%' : ''), X0 + 18, Y0 + H / 2); }
+      if (W * (1 - pos) > 70) { c.textAlign = 'right'; c.fillText((n ? 100 - po + '% ' : '') + 'X', X0 + W - 18, Y0 + H / 2); }
+      c.shadowBlur = 0;
+      c.restore();
+      c.save(); capsule(c, X0, Y0, W, H); c.strokeStyle = 'rgba(0,0,0,.15)'; c.lineWidth = 1; c.stroke(); c.restore();
+      var still = Math.abs(target - pos) < 0.0005 && Math.abs(vel) < 0.00005;
+      if (seen && (!calm || !still)) requestAnimationFrame(frame); else running = false;
+    }
+    function kick() { if (!running && ctx) { running = true; requestAnimationFrame(frame); } }
+    if (window.IntersectionObserver) new IntersectionObserver(function (en) { seen = en[0].isIntersecting; if (seen) kick(); }).observe(tube);
+    window.addEventListener('resize', kick);
+    kick();
+    refresh();
+    // 실시간: 화면에 보이는 동안 몇 초마다 개수를 다시 불러오기(폴링)
+    poll(function () {
+      if (!seen) return true;
+      if (PREVIEW) { if (Math.random() < 0.5) demo.O++; else demo.X++; }
+      return refresh();
+    }, PREVIEW ? 2500 : 6000);
+  }
+
+  // ---------- 방명록 ----------
+  function buildGB(card) {
+    card.appendChild(el('h3', '', C.title || '방명록'));
+    var form = el('div', 'row');
+    var nick = el('input'); nick.placeholder = '닉네임 (10자까지)'; nick.maxLength = 10;
+    var text = el('textarea'); text.placeholder = '남기고 싶은 말 (100자까지)'; text.maxLength = 100;
+    var btn = el('button', '', '남기기');
+    form.appendChild(nick); form.appendChild(text); form.appendChild(btn);
+    var msg = el('p', 'msg');
+    var top = el('div', 'top'); var count = el('span', '', '불러오는 중…'); var re = el('button', 're', '↻ 새로고침');
+    top.appendChild(count); top.appendChild(re);
+    var ul = el('ul', 'list');
+    [form, msg, top, ul].forEach(function (x) { card.appendChild(x); });
+    function lock() { form.style.display = 'none'; msg.textContent = '방명록을 남겼어요. 고마워요!'; }
+    if (getFlag('GB')) lock();
+    var last = -1;
+    function show(list) {
+      var key = list.length + '|' + JSON.stringify(list[list.length - 1] || '');
+      if (key === last) return; last = key;
+      ul.innerHTML = '';
+      count.textContent = list.length >= 50 ? '최근 방명록 50개' : '방명록 ' + list.length + '개';
+      list.slice().reverse().forEach(function (r) {
+        var li = el('li'); li.appendChild(el('b', '', r['닉네임'] || '익명')); li.appendChild(el('small', '', time(r['시간'])));
+        li.appendChild(el('p', '', r['내용'] || '')); ul.appendChild(li);
+      });
+    }
+    function refresh(force) { if (force) last = -1; return load('방명록').then(function (l) { show(l); return true; }, function () { if (last === -1) count.textContent = '목록을 불러오지 못했어요. 잠시 뒤 다시 시도해요.'; return false; }); }
+    re.addEventListener('click', function () { count.textContent = '불러오는 중…'; refresh(true); });
+    btn.addEventListener('click', function () {
+      var n = nick.value.trim(), t = text.value.trim();
+      if (!n || !t) { msg.textContent = '닉네임과 내용을 모두 써 주세요.'; return; }
+      btn.disabled = true; msg.textContent = '저장 중…'; slow(msg);
+      send({ sheet: '방명록', '닉네임': n, '내용': t }).then(function () { setFlag('GB', '1'); lock(); refresh(true); }, function (e) { msg.textContent = failText(e); btn.disabled = false; });
+    });
+    refresh(true);
+    if (!PREVIEW) poll(function () { return refresh(); }, 20000);
+  }
+})();
+
+</script><!-- ▲ 방명록·OX 투표 끝 ▲ --><div class="section-title">오늘의 점심 메뉴 추천기</div>
+        <div class="arcade-box lunch-box">
+            <div class="menu-display" id="menuDisplay">🎲 어떤 맛있는 걸 먹을까?</div>
+            <button class="btn-action" onclick="recommendLunch()">🍱 메뉴 뽑기 버튼 누르기!</button>
+        </div>
+
+        <!-- 섹션 4: 10초 광클 미니게임 -->
+        <div class="section-title">10초 마우스 광클 챌린지</div>
+        <div class="arcade-box game-box">
+            <div class="game-stats">
+                <div>⏳ 남은 시간: <span id="timeText" style="color: rgb(255, 0, 200); font-weight: bold;">10</span>초</div>
+                <div>💥 클릭 수: <span id="scoreText" style="color:var(--secondary-color); font-weight:bold;">0</span>회</div>
+            </div>
+            <button class="btn-clicker" id="clickerBtn" onclick="handleClicker()">🎮 게임 시작 (터치!)</button>
+        </div>
+
+        <footer>
+            <p>© 2026 박상덕의 8-BIT RETRO WORLD | ALL RIGHTS RESERVED ✨</p>
+        </footer>
+    </div>
+
+    <script>
+        /* ==================== 1. 마우스/터치 반짝이 파티클 효과 ==================== */
+        const canvas = document.getElementById('sparkleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Sparkle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 8 + 4; // 픽셀 느낌의 크기
+                this.speedX = (Math.random() - 0.5) * 3;
+                this.speedY = (Math.random() - 0.5) * 3;
+                this.color = getComputedStyle(document.body).getPropertyValue('--sparkle-color').trim() || '#ff3385';
+                this.life = 100;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.life -= 3;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = Math.max(this.life / 100, 0);
+                // 네모난 픽셀 모양 반짝이
+                ctx.fillRect(this.x, this.y, this.size, this.size);
+            }
+        }
+
+        function createSparkles(e) {
+            const x = e.clientX || (e.touches && e.touches[0].clientX);
+            const y = e.clientY || (e.touches && e.touches[0].clientY);
+            if (x && y) {
+                for (let i = 0; i < 2; i++) {
+                    particles.push(new Sparkle(x, y));
+                }
+            }
+        }
+
+        window.addEventListener('mousemove', createSparkles);
+        window.addEventListener('touchmove', createSparkles);
+
+        function animateSparkles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                if (particles[i].life <= 0) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+            requestAnimationFrame(animateSparkles);
+        }
+        animateSparkles();
+
+
+        /* ==================== 2. 카드 뒤집기 ==================== */
+        function flipCard(cardElement) {
+            cardElement.classList.toggle('flipped');
+        }
+
+
+        /* ==================== 3. OX 퀴즈 (3문제) ==================== */
+        const quizAnswers = {
+            1: { correct: true, success: '🎉 정답입니다! 이론 서적 읽으며 뇌 세척하는 걸 참 좋아해요!', fail: '😭 땡~! 놀랍게도 이론 서적 마니아랍니다!' },
+            2: { correct: false, success: '🎉 정답입니다! 아직 점심 메뉴 고르는 중이랍니다 💻', fail: '😭 땡~! 지금은 점심 메뉴 고민 중입니다!' },
+            3: { correct: false, success: '🎉 정답입니다! 화학보다는 생명과학을 좋아해요!', fail: '😭 땡~! 화학 수식만 보면 눈앞이 어지러워요 😵' }
+        };
+
+        function checkQuiz(quizNum, userAnswer) {
+            const quizResult = document.getElementById(`quizResult${quizNum}`);
+            const quizData = quizAnswers[quizNum];
+
+            if (userAnswer === quizData.correct) {
+                quizResult.style.color = '#2b8a3e';
+                quizResult.innerHTML = quizData.success;
+                // 축하 효과 (파티클 생성)
+                for (let i = 0; i < 25; i++) {
+                    particles.push(new Sparkle(window.innerWidth / 2 + (Math.random() - 0.5) * 200, window.innerHeight / 2 + (Math.random() - 0.5) * 200));
+                }
+            } else {
+                quizResult.style.color = '#e03131';
+                quizResult.innerHTML = quizData.fail;
+            }
+        }
+
+
+        /* ==================== 4. 랜덤 점심 메뉴 추천 (10가지 이상) ==================== */
+        const lunchMenus = [
+            "🍕 네모네모 8비트 치즈 피자",
+            "🍔 뾰족뾰족 도트 감성 수제버거",
+            "🍜 레트로 얼큰 라면 한 그릇",
+            "🍣 반짝반짝 초밥 세트",
+            "🍛 우주 최강 카레라이스",
+            "🍲 픽셀 보글보글 김치찌개",
+            "🍝 말랑말랑 크림 파스타",
+            "🍡 떡볶이 & 바삭 튀김",
+            "🍱 추억의 옛날 도시락",
+            "🥩 육즙 가득 돈가스",
+            "🥗 파스텔 샐러드 보울",
+            "🥟 촉촉 갓 찐 만두"
+        ];
+
+        function recommendLunch() {
+            const menuDisplay = document.getElementById('menuDisplay');
+            let count = 0;
+            
+            // 8비트 슬롯머신 느낌의 텍스트 교체 효과
+            const interval = setInterval(() => {
+                const tempIndex = Math.floor(Math.random() * lunchMenus.length);
+                menuDisplay.textContent = lunchMenus[tempIndex];
+                count++;
+                
+                if (count > 10) {
+                    clearInterval(interval);
+                    const finalIndex = Math.floor(Math.random() * lunchMenus.length);
+                    menuDisplay.textContent = `✨ [추천] ${lunchMenus[finalIndex]} ✨`;
+                }
+            }, 80);
+        }
+
+
+        /* ==================== 5. 10초 광클 미니게임 ==================== */
+        let score = 0;
+        let timeLeft = 10;
+        let timer = null;
+        let gameActive = false;
+
+        function handleClicker() {
+            const btn = document.getElementById('clickerBtn');
+            const timeText = document.getElementById('timeText');
+            const scoreText = document.getElementById('scoreText');
+
+            if (!gameActive && timeLeft === 10) {
+                // 게임 시작
+                gameActive = true;
+                score = 1;
+                scoreText.textContent = score;
+                btn.textContent = '🔥 광클!! 더 빠르게!! 🔥';
+
+                timer = setInterval(() => {
+                    timeLeft--;
+                    timeText.textContent = timeLeft;
+
+                    if (timeLeft <= 0) {
+                        clearInterval(timer);
+                        gameActive = false;
+                        btn.textContent = '🔄 다시 도전하기!';
+                        
+                        let rank = '🥉 초보 게이머';
+                        if (score >= 60) rank = '👑 신의 손 (광클 마스터)';
+                        else if (score >= 40) rank = '🥇 8비트 고수';
+                        else if (score >= 20) rank = '🥈 평범한 중수';
+
+                        setTimeout(() => {
+                            alert(`🎉 시간 종료!\n최종 기록: ${score}회 클릭!\n칭호: [${rank}]`);
+                            // 리셋 준비
+                            timeLeft = 10;
+                            timeText.textContent = timeLeft;
+                        }, 100);
+                    }
+                }, 1000);
+            } else if (gameActive) {
+                // 게임 진행 중 카운트
+                score++;
+                scoreText.textContent = score;
+                
+                // 클릭 시 주변에 반짝이 팡팡
+                const rect = btn.getBoundingClientRect();
+                for (let i = 0; i < 3; i++) {
+                    particles.push(new Sparkle(
+                        rect.left + Math.random() * rect.width,
+                        rect.top + Math.random() * rect.height
+                    ));
+                }
+            } else {
+                // 재시작
+                score = 0;
+                timeLeft = 10;
+                scoreText.textContent = score;
+                timeText.textContent = timeLeft;
+                btn.textContent = '🎮 게임 시작 (터치!)';
+            }
+        }
+    </script>
 </body></html>
