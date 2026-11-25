@@ -474,6 +474,7 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
 .st-editing .st-tab-panel{display:block!important;outline:2px dashed rgba(0,0,0,.18);outline-offset:4px;margin:12px 0}
 .st-dform{max-width:560px;text-align:left}
 .st-fl{display:block;margin:0 0 12px}
+.st-fl[hidden]{display:none}
 .st-fl>span{display:block;font-weight:700;font-size:.92rem;margin-bottom:4px}
 .st-fl input,.st-fl select,.st-fl textarea{box-sizing:border-box;width:100%;padding:11px 12px;border:1.5px solid rgba(0,0,0,.25);border-radius:10px;font:inherit;font-size:1rem;background:#fff;color:#222}
 .st-fl textarea{min-height:84px;resize:vertical}
@@ -502,6 +503,8 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
 .st-dl-i .st-t{font-weight:800}
 .st-dl-i .st-k{font-size:.8rem;color:#666;margin-right:6px}
 .st-dl-i .st-sm{font-size:.8rem;color:#777}
+.st-ds-top{margin:10px 0 0;font-weight:700}
+.st-dl-i.is-done p,tr.is-done td{color:#9a9a9a;text-decoration:line-through}.st-dl-i.is-done{background:#f4f4f4}.st-ck{display:inline-flex;align-items:center;gap:6px;margin:6px 12px 0 0;font-size:.9rem;color:#444;min-height:32px}.st-ck input{width:20px;height:20px;margin:0}
 .st-dl-b .st-dl-i{border-radius:4px 18px 18px 18px;background:rgba(0,0,0,.045);box-shadow:none;border:0;max-width:92%}
 .st-dl-tw{overflow-x:auto}
 .st-dl-t{width:100%;border-collapse:collapse;font-size:.95rem}
@@ -536,8 +539,8 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
   <h1 class="title">가장 좋아하는 음악을 공유해보아요</h1>
   <p>~서로 좋아하는 노래를 공유하자~</p>
 </div>
-<div class="st-dset" style="background-color: rgb(255, 240, 247); border-style: solid; border-width: 2px; border-color: rgb(233, 159, 195); max-width: 100%; width: 75%; text-align: center; position: relative; left: 12.6%; top: 12px; z-index: 5;">
-  <form class="st-sec st-dform" data-st="dform" data-tab="노래 장르별 인기도" data-api="https://script.google.com/macros/s/AKfycbzOw9abtmlE6_Zpe2diyM2rK1B2SdAVs25vi5XgmS1V2LiSeI1b1hpZFsTwuCoOeULM/exec">
+<div class="st-dset" style="background-color: rgb(255, 133, 177); border-style: solid; border-width: 4px; border-color: rgb(107, 20, 57); max-width: 100%; width: 75%; text-align: center; position: relative; left: 12.6%; top: 12px; z-index: 5; border-radius: 10px;">
+  <form class="st-sec st-dform" data-st="dform" data-tab="노래 장르별 인기도" data-api="https://script.google.com/macros/s/AKfycbzOw9abtmlE6_Zpe2diyM2rK1B2SdAVs25vi5XgmS1V2LiSeI1b1hpZFsTwuCoOeULM/exec" style="background-color: rgb(255, 255, 255); border-style: solid; border-width: 4px; border-color: rgb(107, 20, 57); border-radius: 10px;">
     <h2 class="st-h">당신이 가장 좋아하는 노래는?</h2>
     <div class="st-fl" role="radiogroup" aria-label="분류" data-kind="chips">
       <span>분류</span>
@@ -559,7 +562,7 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
   
   <section class="st-sec st-dstat" data-st="dstat" data-tab="노래 장르별 인기도" data-api="https://script.google.com/macros/s/AKfycbzOw9abtmlE6_Zpe2diyM2rK1B2SdAVs25vi5XgmS1V2LiSeI1b1hpZFsTwuCoOeULM/exec" data-calc="count" data-field="분류" data-unit="명 투표" data-group="분류">
     <h2 class="st-h">장르별 인기 순위</h2>
-    <div class="st-ds-out" aria-live="polite"></div>
+    <div class="st-ds-out" aria-live="polite" style="background-color: rgb(255, 255, 255); padding: 16px; border-radius: 10px; border-style: solid; border-width: 4px; border-color: rgb(107, 20, 57);"></div>
   </section>
   <div class="st-dset">
     
@@ -568,7 +571,7 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
         <h2 class="st-h">추천곡 목록</h2>
         <button class="st-dl-rf" type="button">↻ 새로고침</button>
       </div>
-      <div class="st-dl-out" aria-live="polite"></div>
+      <div class="st-dl-out" aria-live="polite" style="background-color: rgb(255, 255, 255); border-radius: 10px;"></div>
     </section>
     <section class="st-sec st-dstat" data-st="dstat" data-tab="노래 장르별 인기도" data-api="https://script.google.com/macros/s/AKfycbzOw9abtmlE6_Zpe2diyM2rK1B2SdAVs25vi5XgmS1V2LiSeI1b1hpZFsTwuCoOeULM/exec" data-calc="count" data-unit="곡">
       <h2 class="st-h">지금까지 추천된 곡</h2>
@@ -631,11 +634,27 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
     // ---- 데이터 블록: 입력 폼 · 목록 · 통계 (백엔드 주소와 탭 이름으로 연결) ----
     var EDIT = document.documentElement.classList.contains('st-editing');
     function stQs(o) { return Object.keys(o).filter(function (k) { return o[k] !== '' && o[k] != null; }).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(o[k]); }).join('&'); }
-    function stGet(base, o) { return fetch(base + (base.indexOf('?') < 0 ? '?' : '&') + stQs(o)).then(function (r) { return r.json(); }).then(function (j) { if (!j.ok) throw new Error(j.error || '실패'); return j; }); }
-    function stPost(base, o) { return fetch(base, { method: 'POST', body: JSON.stringify(o) }).then(function (r) { return r.json(); }).then(function (j) { if (!j.ok) throw new Error(j.error || '실패'); return j; }); }
+    function stJson(r) { return r.text().then(function (s) { try { return JSON.parse(s); } catch (e) { var x = new Error('BADRESP'); x.bad = 1; throw x; } }); }
+    function stChk(j) { if (!j.ok) throw new Error(j.error || '실패'); return j; }
+    function stFetch(url, opt) {
+      var ctl = typeof AbortController === 'function' ? new AbortController() : null, tm = 0; opt = opt || {};
+      if (ctl) { opt.signal = ctl.signal; tm = setTimeout(function () { ctl.abort(); }, 25000); }
+      return fetch(url, opt).then(function (r) { clearTimeout(tm); return r; }, function (e) { clearTimeout(tm); if (e && e.name === 'AbortError') throw new Error('TIMEOUT'); throw e; });
+    }
+    function stBusy(e) { return !!e && (e.bad || /lock|busy|too many|too much|rate|동시|잠시|일시|many times/i.test(String(e.message))); }
+    function stRetry(fn, n) { return fn().catch(function (e) { if (n > 0 && stBusy(e)) return new Promise(function (ok) { setTimeout(ok, 700 + Math.random() * 1800); }).then(function () { return stRetry(fn, n - 1); }); throw e; }); }
+    function stGet(base, o) { var qs = stQs(o); return stRetry(function () { return stFetch(base + (base.indexOf('?') < 0 ? '?' : '&') + (qs ? qs + '&' : '') + '_=' + Date.now()).then(stJson).then(stChk); }, 2); }
+    function stPost(base, o) { return stRetry(function () { return stFetch(base, { method: 'POST', body: JSON.stringify(o) }).then(stJson).then(stChk); }, 3); }
     function mk(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
     function today() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
-    function errText(e) { return /Failed to fetch|NetworkError|Load failed/i.test(String(e && e.message)) ? '서버에 연결하지 못했어요. 백엔드 주소와 배포 설정(액세스: 모든 사용자)을 확인해요.' : String(e && e.message || e); }
+    function errText(e) {
+      var m = String(e && e.message || e);
+      if (/Failed to fetch|NetworkError|Load failed/i.test(m)) return '서버에 연결하지 못했어요. 인터넷 연결, 백엔드 주소, 배포 설정(액세스: 모든 사용자)을 확인해요.';
+      if (m === 'TIMEOUT') return '서버 대답이 너무 늦어요. 잠시 뒤 목록을 새로고침해서 저장됐는지 확인해요.';
+      if (m === 'BADRESP') return '서버가 올바른 답을 주지 않았어요. 앱스 스크립트를 "새 버전"으로 다시 배포했는지, 액세스가 "모든 사용자"인지 확인해요.';
+      if (/lock/i.test(m)) return '지금 저장하는 사람이 많아 밀렸어요. 잠시 뒤 다시 눌러요.';
+      return m;
+    }
     function pubOnly(c) { return c.charAt(0) !== '_'; }
     function lab(c) { return c === 'createdAt' ? '작성 시간' : c; }
     function starStr(v) { var n = Math.max(0, Math.min(5, Math.round(+v))); return '★★★★★'.slice(0, n) + '☆☆☆☆☆'.slice(0, 5 - n); }
@@ -651,7 +670,7 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
       fresh();
       f.addEventListener('submit', function (e) {
         e.preventDefault();
-        if (EDIT) return;
+        if (EDIT) { msg.textContent = '편집 화면에서는 저장되지 않아요. 위쪽 ▶ 동작 보기에서 눌러 보세요.'; return; }
         if (!base) { msg.textContent = '백엔드 주소가 아직 없어요. 웹 스튜디오 왼쪽 "데이터 연결"에 넣어요.'; return; }
         var data = {};
         Array.prototype.forEach.call(f.elements, function (x) {
@@ -673,6 +692,7 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
       var stars = (L.getAttribute('data-stars') || '').split(',');
       var view = L.getAttribute('data-view') || 'card';
       var fcol = L.getAttribute('data-filter') || '', wantQ = L.hasAttribute('data-search'), mine = L.hasAttribute('data-mine'), lim = +L.getAttribute('data-limit') || 20;
+      var chk = L.getAttribute('data-check') || '', ON = 'O', OFF = 'X';
       var q = '', fv = '', rows0 = [], fbox = null;
       var note = mk('p', 'st-dmsg'); L.appendChild(note);
       if (wantQ || fcol) {
@@ -691,19 +711,35 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
         });
         return d;
       }
+      function isOn(r) { return chk && String(r[chk]) === ON; }
+      function chkBox(r, tk, nolabel) {
+        var w = mk('label', 'st-ck'), i = mk('input'); i.type = 'checkbox'; i.checked = isOn(r); w.appendChild(i);
+        w.appendChild(document.createTextNode(nolabel ? '' : ' ' + lab(chk) + ' 완료'));
+        if (nolabel) i.setAttribute('aria-label', lab(chk) + ' 완료');
+        i.addEventListener('change', function () {
+          var on = i.checked, nv = on ? ON : OFF;
+          if (EDIT || !base || !tk) { r[chk] = nv; show(); return; }
+          var dd = {}; dd[chk] = nv; i.disabled = true;
+          stPost(base, { action: 'update', tab: tab, id: r.id, token: tk, data: dd }).then(function () { r[chk] = nv; i.disabled = false; show(); fire(); })
+            .catch(function (err) { i.checked = !on; i.disabled = false; note.textContent = errText(err); });
+        });
+        return w;
+      }
+      function chkCell(r, nolabel) { var tk = tokOf(r); if (!base || tk) return chkBox(r, tk, nolabel); return mk('span', 'st-ck', isOn(r) ? '✓ 완료' : ''); }
       function draw(rows) {
         out.innerHTML = ''; out.className = 'st-dl-out' + (view === 'bubble' ? ' st-dl-b' : '');
         if (!rows.length) { out.appendChild(mk('p', 'st-dmsg', mine && !EDIT ? '이 기기에서 쓴 글이 아직 없어요.' : '보여 줄 글이 없어요. 첫 번째로 남겨 보세요!')); return; }
         var cs = cols.length ? cols : Object.keys(rows[0]).filter(function (k) { return k !== 'id' && k !== 'createdAt'; });
+        if (chk) cs = cs.filter(function (c) { return c !== chk; });
         if (view === 'table') {
           var w = mk('div', 'st-dl-tw'), t = mk('table', 'st-dl-t'), hr = mk('tr');
           var anyDel = rows.some(function (r) { return !!tokOf(r); });
-          cs.forEach(function (c) { hr.appendChild(mk('th', '', lab(c))); }); if (anyDel) hr.appendChild(mk('th')); t.appendChild(hr);
-          rows.forEach(function (r) { var tr = mk('tr'); cs.forEach(function (c) { tr.appendChild(mk('td', '', val(r, c))); }); if (anyDel) { var td = mk('td'), tk = tokOf(r); if (tk) td.appendChild(delBtn(r, tk)); tr.appendChild(td); } t.appendChild(tr); });
+          cs.forEach(function (c) { hr.appendChild(mk('th', '', lab(c))); }); if (chk) hr.appendChild(mk('th', '', lab(chk))); if (anyDel) hr.appendChild(mk('th')); t.appendChild(hr);
+          rows.forEach(function (r) { var tr = mk('tr', isOn(r) ? 'is-done' : ''); cs.forEach(function (c) { tr.appendChild(mk('td', '', val(r, c))); }); if (chk) { var tc = mk('td'); tc.appendChild(chkCell(r, true)); tr.appendChild(tc); } if (anyDel) { var td = mk('td'), tk = tokOf(r); if (tk) td.appendChild(delBtn(r, tk)); tr.appendChild(td); } t.appendChild(tr); });
           w.appendChild(t); out.appendChild(w); return;
         }
         rows.forEach(function (r) {
-          var it = mk('div', 'st-dl-i');
+          var it = mk('div', 'st-dl-i' + (isOn(r) ? ' is-done' : ''));
           cs.forEach(function (c, i) {
             var v = val(r, c); if (v === '') return;
             if (c === 'createdAt') { it.appendChild(mk('p', 'st-sm', v)); return; }
@@ -711,6 +747,7 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
             if (i > 0 && view === 'card') p.appendChild(mk('span', 'st-k', lab(c)));
             p.appendChild(document.createTextNode(v)); it.appendChild(p);
           });
+          if (chk) it.appendChild(chkCell(r));
           var tk = tokOf(r); if (tk) it.appendChild(delBtn(r, tk));
           out.appendChild(it);
         });
@@ -737,10 +774,10 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
         return [1, 2, 3].map(function (n) { var r = { id: 'x' + n }; cs.forEach(function (c) { r[c] = c === 'createdAt' ? '2026-12-0' + n + ' 09:00' : stars.indexOf(c) >= 0 ? 5 - n : (c === fcol ? '예시 ' + (n % 2 + 1) : '예시 ' + n); }); return r; });
       }
       function load() {
-        if (EDIT || !base) { rows0 = demo(); drawF(); show(); if (!EDIT) note.textContent = '※ 예시 모습이에요. 백엔드 주소를 연결하면 진짜 데이터가 나와요.'; return; }
+        if (EDIT || !base) { rows0 = demo(); if (chk) rows0.forEach(function (r, n) { r[chk] = n === 1 ? ON : OFF; }); drawF(); show(); if (!EDIT) note.textContent = '※ 예시 모습이에요. 백엔드 주소를 연결하면 진짜 데이터가 나와요.'; return; }
         note.textContent = '불러오는 중…';
         stGet(base, { action: 'list', tab: tab, sort: L.getAttribute('data-sort') || 'createdAt', desc: L.getAttribute('data-desc') ? 'true' : '', limit: (fcol || wantQ || mine) ? 300 : lim })
-          .then(function (j) { note.textContent = mine ? '이 기기에서 쓴 글만 보여요.' : ''; rows0 = j.rows; drawF(); show(); }).catch(function (err) { note.textContent = '불러오지 못했어요. ' + errText(err); });
+          .then(function (j) { note.textContent = mine ? '이 기기에서 쓴 글만 보여요.' : ''; rows0 = j.rows; if (chk) rows0.forEach(function (r) { if (r[chk] === undefined || r[chk] === '') r[chk] = OFF; }); drawF(); show(); }).catch(function (err) { note.textContent = '불러오지 못했어요. ' + errText(err); });
       }
       load();
       document.addEventListener('st-data', function () { if (!EDIT && base) load(); });
@@ -748,6 +785,7 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
     each('[data-st="dstat"]', function (B) {
       var base = B.getAttribute('data-api'), tab = B.getAttribute('data-tab') || 'data', out = B.querySelector('.st-ds-out');
       if (!out) return;
+      var ON = B.getAttribute('data-on') || 'O', topT = B.getAttribute('data-top') || '';
       var calc = B.getAttribute('data-calc') || 'count', field = B.getAttribute('data-field') || '', group = B.getAttribute('data-group') || '', unit = B.getAttribute('data-unit') || '';
       var note = mk('p', 'st-dmsg'); B.appendChild(note);
       function pick(o) { var v = calc === 'count' ? o.count : o[calc]; return v === undefined ? null : v; }
@@ -760,6 +798,13 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
       }
       function draw(j) {
         out.innerHTML = '';
+        if (calc === 'ratio') {
+          var tot = j.total != null ? j.total : j.all.count, g0 = j.groups && j.groups[ON], okN = g0 ? g0.count : 0, pc = tot ? Math.round(okN / tot * 100) : 0;
+          out.appendChild(mk('p', 'st-ds-num', pc + '%'));
+          var rw = mk('div', 'st-ds-bars'), rr = mk('div', 'st-ds-row'), rb = mk('span', 'st-ds-bar'), ri = mk('i'); ri.style.width = pc + '%'; rb.appendChild(ri);
+          rr.appendChild(mk('span', '', '')); rr.appendChild(rb); rr.appendChild(mk('span', '', okN + '/' + tot)); rw.appendChild(rr); out.appendChild(rw);
+          return;
+        }
         var v = pick(j.all);
         out.appendChild(mk('p', 'st-ds-num', fmt(v)));
         if (v === null && field) { note.textContent = '"' + field + '" 열에는 계산할 숫자가 없어요.'; return; }
@@ -767,14 +812,19 @@ html.st-dark img,html.st-dark video,html.st-dark iframe,html.st-dark canvas{filt
         if (group && j.groups) { Object.keys(j.groups).forEach(function (g) { var x = pick(j.groups[g]); m[g] = x === null ? 0 : x; }); }
         else if (!group && field && calc === 'count' && j.all.values) { m = j.all.values; }
         if (Object.keys(m).length) out.appendChild(bars(m));
+        if (topT && Object.keys(m).length) {
+          var tk2 = Object.keys(m).sort(function (a, b) { return m[b] - m[a]; })[0];
+          if (m[tk2] > 0) out.appendChild(mk('p', 'st-ds-top', topT + ': ' + tk2 + ' (' + fmt(m[tk2]) + ')'));
+        }
       }
       function demo() {
         var g = { '예시 A': { count: 6, sum: 30000, avg: 5000 }, '예시 B': { count: 4, sum: 12000, avg: 3000 }, '예시 C': { count: 2, sum: 6000, avg: 3000 } };
+        if (calc === 'ratio') { var gg = {}; gg[ON] = { count: 7 }; return { total: 12, all: { count: 12 }, groups: gg }; }
         return { all: { count: 12, sum: 48000, avg: 4000, min: 500, max: 15000, values: { '예시 A': 6, '예시 B': 4, '예시 C': 2 } }, groups: g };
       }
       function load() {
         if (EDIT || !base) { draw(demo()); if (!EDIT) note.textContent = '※ 예시 모습이에요. 백엔드 주소를 연결하면 진짜 데이터가 나와요.'; return; }
-        stGet(base, { action: 'stats', tab: tab, field: field, groupBy: group }).then(function (j) { note.textContent = ''; draw(j); }).catch(function (err) { note.textContent = '불러오지 못했어요. ' + errText(err); });
+        stGet(base, { action: 'stats', tab: tab, field: calc === 'ratio' ? '' : field, groupBy: group }).then(function (j) { note.textContent = ''; draw(j); }).catch(function (err) { note.textContent = '불러오지 못했어요. ' + errText(err); });
       }
       load();
       document.addEventListener('st-data', function () { if (!EDIT && base) load(); });
